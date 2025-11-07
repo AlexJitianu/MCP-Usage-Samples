@@ -1,0 +1,319 @@
+{
+  "actionDetails" : {
+    "id" : "pseudoaction.chat.message.dita.agent",
+    "categoryId" : "Chat modes",
+    "type" : "pseudo",
+    "title" : "DITA Agent",
+    "short-description" : "DITA Agent",
+    "description" : "Chat with the AI about your DITA XML project, set goals, or give instructions. The AI explores your project to complete even complex tasks efficiently, proposes a plan, and can make project-wide changes on your behalf—but you decide what to keep.",
+    "expand-params" : [ {
+      "name" : "currentProjectURL",
+      "value" : "${pdu}",
+      "prefix" : "\nThe current project root directory URL: "
+    }, {
+      "name" : "currentMapURL",
+      "value" : "${currentMapURL}",
+      "prefix" : "\nThe current DITA Map URL: "
+    }, {
+      "name" : "currentEditorURL",
+      "value" : "${currentFileURL}",
+      "prefix" : "\nThe currently edited document URL: "
+    }, {
+      "name" : "documentType",
+      "value" : "${contentTypeDescription}",
+      "prefix" : "\nThe type of the current edited document: "
+    }, {
+      "name" : "contextPrompt",
+      "value" : "${contextPrompt}"
+    } ],
+    "parameters" : {
+      "temperature" : 0.0,
+      "max_tokens" : 0,
+      "function_refs" : [ {
+        "ref" : "get_current_document_location"
+      }, {
+        "ref" : "get_document_content"
+      }, {
+        "ref" : "get_text_around_caret"
+      }, {
+        "ref" : "search_project_resources"
+      }, {
+        "ref" : "grep_project"
+      }, {
+        "ref" : "list_dir"
+      }, {
+        "ref" : "get_ditamap_structure"
+      }, {
+        "ref" : "save_document"
+      }, {
+        "ref" : "edit_document"
+      }, {
+        "ref" : "add_dita_reference_to_ditamap"
+      }, {
+        "ref" : "invoke_ai_action"
+      }, {
+        "ref" : "retrieve_ai_actions"
+      }, {
+        "ref" : "get_xml_refactoring_operations"
+      }, {
+        "ref" : "get_xml_refactoring_operation_params"
+      }, {
+        "ref" : "refactor_xml_with_operation"
+      }, {
+        "ref" : "refactor_xml_with_xslt"
+      }, {
+        "ref" : "store_to_memory"
+      }, {
+        "ref" : "resolve_dita_reference"
+      }, {
+        "ref" : "find_reusable_components"
+      }, {
+        "ref" : "get_dita_keyrefs"
+      }, {
+        "ref" : "validate_content"
+      }, {
+        "ref" : "validate_current_document"
+      }, {
+        "ref" : "term_check_document_content"
+      }, {
+        "ref" : "term_check_current_document"
+      } ]
+    },
+    "quick-assist" : false,
+    "embed-assist" : false,
+    "isBuiltinAction" : true
+  },
+  "actionParameters" : {
+    "currentMapURL" : "",
+    "currentEditorURL" : "\nThe currently edited document URL: file:/D:/Git-workspace/tcworld-ai-mcp/MCP-Usage-Samples/mobile-phone-project/battery.dita",
+    "documentType" : "\nThe type of the current edited document: DITA valid XML elements ",
+    "currentProjectURL" : "\nThe current project root directory URL: file:/D:/Git-workspace/tcworld-ai-mcp/MCP-Usage-Samples/",
+    "contextPrompt" : "We work in the MCP-Usage-Samples github repository, https://github.com/AlexJitianu/MCP-Usage-Samples"
+  },
+  "name" : "create a topic about the phone camera",
+  "description" : "create a topic about the phone camera",
+  "initialMessages" : [ ],
+  "tree" : {
+    "conversationId" : 1762521791893,
+    "root" : {
+      "type" : "MessageNode",
+      "contentNodes" : [ {
+        "type" : "MessageNode",
+        "message" : {
+          "role" : "user",
+          "content" : "create a topic about the phone camera"
+        },
+        "contentNodes" : [ {
+          "type" : "tools",
+          "message" : {
+            "role" : "assistant",
+            "content" : [ ],
+            "tool_calls" : [ {
+              "index" : 0,
+              "id" : "call_coTArUe6mJRHN9mYhfw2DZYs",
+              "type" : "function",
+              "function" : {
+                "name" : "list_dir",
+                "arguments" : "{\"explanation\":\"Check the structure of the mobile-phone-project directory to determine the best location for the new camera topic.\",\"folder_path\":\"D:/Git-workspace/tcworld-ai-mcp/MCP-Usage-Samples/mobile-phone-project/\"}"
+              }
+            } ]
+          },
+          "contentNodes" : [ {
+            "type" : "tools",
+            "message" : {
+              "role" : "assistant",
+              "content" : [ ],
+              "tool_calls" : [ {
+                "index" : 0,
+                "id" : "call_o5neraBhf545OunSr1I7q8vY",
+                "type" : "function",
+                "function" : {
+                  "name" : "get_document_content",
+                  "arguments" : "{\"docURL\":\"file:/D:/Git-workspace/tcworld-ai-mcp/MCP-Usage-Samples/mobile-phone-project/features.dita\"}"
+                }
+              } ]
+            },
+            "contentNodes" : [ {
+              "type" : "tools",
+              "message" : {
+                "role" : "assistant",
+                "content" : [ ],
+                "tool_calls" : [ {
+                  "index" : 0,
+                  "id" : "call_LCCesYobfK3DiCldUVFOGbgT",
+                  "type" : "function",
+                  "function" : {
+                    "name" : "get_document_content",
+                    "arguments" : "{\"docURL\":\"file:/D:/Git-workspace/tcworld-ai-mcp/MCP-Usage-Samples/mobile-phone-project/introduction.dita\"}"
+                  }
+                } ]
+              },
+              "contentNodes" : [ {
+                "type" : "tools",
+                "message" : {
+                  "role" : "assistant",
+                  "content" : [ ],
+                  "tool_calls" : [ {
+                    "index" : 0,
+                    "id" : "call_sWAl0xS0FQTBuW973089keyR",
+                    "type" : "function",
+                    "function" : {
+                      "name" : "get_document_content",
+                      "arguments" : "{\"docURL\":\"file:/D:/Git-workspace/tcworld-ai-mcp/MCP-Usage-Samples/mobile-phone-project/mobile-phone.ditamap\"}"
+                    }
+                  } ]
+                },
+                "contentNodes" : [ {
+                  "type" : "tools",
+                  "message" : {
+                    "role" : "assistant",
+                    "content" : "I will create a new DITA topic about the phone camera in the \"mobile-phone-project\" directory. The topic will provide an overview of the camera feature, following DITA best practices and the style guide.\n\nAfter creating the topic, I will add a reference to it in the DITA map (\"mobile-phone.ditamap\") so it appears in the user guide's table of contents.\n\nProceeding to create the new topic and update the map.",
+                    "tool_calls" : [ {
+                      "index" : 0,
+                      "id" : "call_vUbNo256ydK0gppmmTgIpwCC",
+                      "type" : "function",
+                      "function" : {
+                        "name" : "save_document",
+                        "arguments" : "{\"content\":\"<?xml version=\\\"1.0\\\" encoding=\\\"UTF-8\\\"?>\\n<!DOCTYPE topic PUBLIC \\\"-//OASIS//DTD DITA Topic//EN\\\" \\\"topic.dtd\\\">\\n<topic id=\\\"camera\\\">\\n  <title>Camera</title>\\n  <body>\\n    <p>Your mobile phone includes a high-resolution camera. You can use it to take clear photos and record videos. The camera supports features such as autofocus, digital zoom, and various shooting modes to help you capture the best moments.</p>\\n  </body>\\n</topic>\",\"url\":\"file:/D:/Git-workspace/tcworld-ai-mcp/MCP-Usage-Samples/mobile-phone-project/camera.dita\",\"validate\":\"true\"}"
+                      }
+                    } ]
+                  },
+                  "contentNodes" : [ {
+                    "type" : "tools",
+                    "message" : {
+                      "role" : "assistant",
+                      "content" : [ ],
+                      "tool_calls" : [ {
+                        "index" : 0,
+                        "id" : "call_BymhRWWdnVeruQEDIhzmFnFp",
+                        "type" : "function",
+                        "function" : {
+                          "name" : "list_dir",
+                          "arguments" : "{\"explanation\":\"Verify that the new camera.dita file is present before updating the DITA map.\",\"folder_path\":\"D:/Git-workspace/tcworld-ai-mcp/MCP-Usage-Samples/mobile-phone-project/\"}"
+                        }
+                      } ]
+                    },
+                    "contentNodes" : [ {
+                      "type" : "tools",
+                      "message" : {
+                        "role" : "assistant",
+                        "content" : [ ],
+                        "tool_calls" : [ {
+                          "index" : 0,
+                          "id" : "call_CcAZHXrjXiQdqzC4AjfFaFuR",
+                          "type" : "function",
+                          "function" : {
+                            "name" : "get_document_content",
+                            "arguments" : "{\"docURL\":\"file:/D:/Git-workspace/tcworld-ai-mcp/MCP-Usage-Samples/mobile-phone-project/mobile-phone.ditamap\"}"
+                          }
+                        } ]
+                      },
+                      "contentNodes" : [ {
+                        "type" : "tools",
+                        "message" : {
+                          "role" : "assistant",
+                          "content" : [ ],
+                          "tool_calls" : [ {
+                            "index" : 0,
+                            "id" : "call_O1g4WOHp41OcY2unbP8BVIaD",
+                            "type" : "function",
+                            "function" : {
+                              "name" : "save_document",
+                              "arguments" : "{\"content\":\"<?xml version=\\\"1.0\\\" encoding=\\\"UTF-8\\\"?>\\n<!DOCTYPE map PUBLIC \\\"-//OASIS//DTD DITA Map//EN\\\" \\\"map.dtd\\\">\\n<map title=\\\"Mobile Phone User Guide\\\">\\n  <topicref href=\\\"introduction.dita\\\" navtitle=\\\"Introduction\\\"/>\\n  <topicref href=\\\"features.dita\\\" navtitle=\\\"Features\\\"/>\\n  <topicref href=\\\"battery.dita\\\" navtitle=\\\"Battery and Charging\\\"/>\\n  <topicref href=\\\"camera.dita\\\" navtitle=\\\"Camera\\\"/>\\n</map>\",\"url\":\"file:/D:/Git-workspace/tcworld-ai-mcp/MCP-Usage-Samples/mobile-phone-project/mobile-phone.ditamap\",\"validate\":\"true\"}"
+                            }
+                          } ]
+                        },
+                        "contentNodes" : [ {
+                          "type" : "MessageNode",
+                          "message" : {
+                            "role" : "assistant",
+                            "content" : "A new DITA topic about the phone camera has been created as \"camera.dita\" in the \"mobile-phone-project\" directory. The topic provides a clear overview of the camera feature, following DITA and style guide best practices.\n\nAdditionally, I updated the DITA map (\"mobile-phone.ditamap\") to include the new Camera topic in the user guide's table of contents.\n\nLet me know if you want to review or further expand the camera topic!"
+                          },
+                          "contentNodes" : [ ],
+                          "engine" : "gpt-4.1-2025-04-14"
+                        } ],
+                        "engine" : "gpt-4.1-2025-04-14",
+                        "tool_calls_info" : [ {
+                          "tool_message" : {
+                            "role" : "tool",
+                            "content" : "Content successfully saved",
+                            "tool_call_id" : "call_O1g4WOHp41OcY2unbP8BVIaD"
+                          },
+                          "tool_call_description" : "Write document (file:/D:/Git-workspace/tcworld-ai-mcp/MCP-Usage-Samples/mobile-phone-project/mobile-phone.ditamap)"
+                        } ]
+                      } ],
+                      "engine" : "gpt-4.1-2025-04-14",
+                      "tool_calls_info" : [ {
+                        "tool_message" : {
+                          "role" : "tool",
+                          "content" : "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE map PUBLIC \"-//OASIS//DTD DITA Map//EN\" \"map.dtd\">\n<map title=\"Mobile Phone User Guide\">\n  <topicref href=\"introduction.dita\" navtitle=\"Introduction\"/>\n  <topicref href=\"features.dita\" navtitle=\"Features\"/>\n  <topicref href=\"battery.dita\" navtitle=\"Battery and Charging\"/>\n</map>\n",
+                          "tool_call_id" : "call_CcAZHXrjXiQdqzC4AjfFaFuR"
+                        },
+                        "tool_call_description" : "Read document (file:/D:/Git-workspace/tcworld-ai-mcp/MCP-Usage-Samples/mobile-phone-project/mobile-phone.ditamap)"
+                      } ]
+                    } ],
+                    "engine" : "gpt-4.1-2025-04-14",
+                    "tool_calls_info" : [ {
+                      "tool_message" : {
+                        "role" : "tool",
+                        "content" : "{\"entries\":[{\"name\":\"battery.dita\"},{\"name\":\"camera.dita\"},{\"name\":\"features.dita\"},{\"name\":\"introduction.dita\"},{\"name\":\"mobile-phone.ditamap\"}]}",
+                        "tool_call_id" : "call_BymhRWWdnVeruQEDIhzmFnFp"
+                      },
+                      "tool_call_description" : "List files in folder (D:/Git-workspace/tcworld-ai-mcp/MCP-Usage-Samples/mobile-phone-project/)\nVerify that the new camera.dita file is present before updating the DITA map."
+                    } ]
+                  } ],
+                  "engine" : "gpt-4.1-2025-04-14",
+                  "tool_calls_info" : [ {
+                    "tool_message" : {
+                      "role" : "tool",
+                      "content" : "Content successfully saved",
+                      "tool_call_id" : "call_vUbNo256ydK0gppmmTgIpwCC"
+                    },
+                    "tool_call_description" : "Write document (file:/D:/Git-workspace/tcworld-ai-mcp/MCP-Usage-Samples/mobile-phone-project/camera.dita)"
+                  } ]
+                } ],
+                "engine" : "gpt-4.1-2025-04-14",
+                "tool_calls_info" : [ {
+                  "tool_message" : {
+                    "role" : "tool",
+                    "content" : "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE map PUBLIC \"-//OASIS//DTD DITA Map//EN\" \"map.dtd\">\n<map title=\"Mobile Phone User Guide\">\n  <topicref href=\"introduction.dita\" navtitle=\"Introduction\"/>\n  <topicref href=\"features.dita\" navtitle=\"Features\"/>\n  <topicref href=\"battery.dita\" navtitle=\"Battery and Charging\"/>\n</map>\n",
+                    "tool_call_id" : "call_sWAl0xS0FQTBuW973089keyR"
+                  },
+                  "tool_call_description" : "Read document (file:/D:/Git-workspace/tcworld-ai-mcp/MCP-Usage-Samples/mobile-phone-project/mobile-phone.ditamap)"
+                } ]
+              } ],
+              "engine" : "gpt-4.1-2025-04-14",
+              "tool_calls_info" : [ {
+                "tool_message" : {
+                  "role" : "tool",
+                  "content" : "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE topic PUBLIC \"-//OASIS//DTD DITA Topic//EN\" \"topic.dtd\">\n<topic id=\"introduction\">\n  <title>Introduction</title>\n  <body>\n    <p>Welcome to your new mobile phone! This guide will help you get started and make the most of your device.</p>\n  </body>\n</topic>\n",
+                  "tool_call_id" : "call_LCCesYobfK3DiCldUVFOGbgT"
+                },
+                "tool_call_description" : "Read document (file:/D:/Git-workspace/tcworld-ai-mcp/MCP-Usage-Samples/mobile-phone-project/introduction.dita)"
+              } ]
+            } ],
+            "engine" : "gpt-4.1-2025-04-14",
+            "tool_calls_info" : [ {
+              "tool_message" : {
+                "role" : "tool",
+                "content" : "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE topic PUBLIC \"-//OASIS//DTD DITA Topic//EN\" \"topic.dtd\">\n<topic id=\"features\">\n  <title>Features</title>\n  <body>\n    <p>Your mobile phone includes the following features:</p>\n    <ul>\n      <li>High-resolution camera</li>\n      <li>Long-lasting battery</li>\n      <li>Fast processor</li>\n      <li>5G connectivity</li>\n    </ul>\n  </body>\n</topic>\n",
+                "tool_call_id" : "call_o5neraBhf545OunSr1I7q8vY"
+              },
+              "tool_call_description" : "Read document (file:/D:/Git-workspace/tcworld-ai-mcp/MCP-Usage-Samples/mobile-phone-project/features.dita)"
+            } ]
+          } ],
+          "engine" : "gpt-4.1-2025-04-14",
+          "tool_calls_info" : [ {
+            "tool_message" : {
+              "role" : "tool",
+              "content" : "{\"entries\":[{\"name\":\"battery.dita\"},{\"name\":\"features.dita\"},{\"name\":\"introduction.dita\"},{\"name\":\"mobile-phone.ditamap\"}]}",
+              "tool_call_id" : "call_coTArUe6mJRHN9mYhfw2DZYs"
+            },
+            "tool_call_description" : "List files in folder (D:/Git-workspace/tcworld-ai-mcp/MCP-Usage-Samples/mobile-phone-project/)\nCheck the structure of the mobile-phone-project directory to determine the best location for the new camera topic."
+          } ]
+        } ]
+      } ]
+    }
+  },
+  "index" : [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
+}

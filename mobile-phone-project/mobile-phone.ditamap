@@ -4,4 +4,5 @@
   <topicref href="introduction.dita" navtitle="Introduction"/>
   <topicref href="features.dita" navtitle="Features"/>
   <topicref href="battery.dita" navtitle="Battery and Charging"/>
+  <topicref href="camera.dita" navtitle="Camera"/>
 </map>
