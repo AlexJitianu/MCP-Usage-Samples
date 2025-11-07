@@ -1,0 +1,6 @@
+- read all the comments from issue #1, 
+- make a plan: what new topics to create, how to update my existing topics to mirror those changes, make references
+- execute the plan
+
+=====
+You mentioned the night mode in several topics, verify if you added xrefs. always remember to add references to the topic in such cases.
