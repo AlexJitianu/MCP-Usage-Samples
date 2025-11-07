@@ -6,12 +6,48 @@
             <serialized xml:space="preserve">
                 <serializableOrderedMap>
                     <entry>
+                        <String>PLUGIN_CUSTOM_OPTIONS.oxygen.positron.plugin.additional.context.file</String>
+                        <String>${pd}/ai-context.md, ${pd}/positron-ai/ai-context.md, ${pd}/positron-ai-actions/ai-context.md</String>
+                    </entry>
+                    <entry>
+                        <String>PLUGIN_CUSTOM_OPTIONS.oxygen.positron.plugin.auto.validate.insertion</String>
+                        <String>true</String>
+                    </entry>
+                    <entry>
+                        <String>PLUGIN_CUSTOM_OPTIONS.oxygen.positron.plugin.auto.validate.whole.document</String>
+                        <String>true</String>
+                    </entry>
+                    <entry>
+                        <String>PLUGIN_CUSTOM_OPTIONS.oxygen.positron.plugin.auto.validate.xml.fragments</String>
+                        <String>false</String>
+                    </entry>
+                    <entry>
+                        <String>PLUGIN_CUSTOM_OPTIONS.oxygen.positron.plugin.enable.positron</String>
+                        <String>true</String>
+                    </entry>
+                    <entry>
+                        <String>PLUGIN_CUSTOM_OPTIONS.oxygen.positron.plugin.mcp.add.tools.all.chatmodes</String>
+                        <String>true</String>
+                    </entry>
+                    <entry>
+                        <String>PLUGIN_CUSTOM_OPTIONS.oxygen.positron.plugin.mcp.config.file</String>
+                        <String>${pd}/config-mcp.json</String>
+                    </entry>
+                    <entry>
+                        <String>PLUGIN_CUSTOM_OPTIONS.oxygen.positron.plugin.mcp.local.servers.enable</String>
+                        <String>false</String>
+                    </entry>
+                    <entry>
+                        <String>PLUGIN_CUSTOM_OPTIONS.oxygen.positron.plugin.mcp.timeout</String>
+                        <String>10</String>
+                    </entry>
+                    <entry>
                         <String>Positron_addon_preferences_engine_page</String>
                         <Boolean>false</Boolean>
                     </entry>
                     <entry>
                         <String>Positron_addon_preferences_page</String>
-                        <Boolean>false</Boolean>
+                        <Boolean>true</Boolean>
                     </entry>
                     <entry>
                         <String>key.custom.editor.variables.option.pane</String>
@@ -19,7 +55,7 @@
                     </entry>
                     <entry>
                         <String>mcp_preferences_page</String>
-                        <Boolean>false</Boolean>
+                        <Boolean>true</Boolean>
                     </entry>
                     <entry>
                         <String>user.defined.editor.variables</String>
