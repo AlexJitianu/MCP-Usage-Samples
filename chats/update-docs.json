@@ -1,0 +1,491 @@
+{
+  "actionDetails" : {
+    "id" : "pseudoaction.chat.message.dita.agent",
+    "categoryId" : "Chat modes",
+    "type" : "pseudo",
+    "title" : "DITA Agent",
+    "short-description" : "DITA Agent",
+    "description" : "Chat with the AI about your DITA XML project, set goals, or give instructions. The AI explores your project to complete even complex tasks efficiently, proposes a plan, and can make project-wide changes on your behalf—but you decide what to keep.",
+    "expand-params" : [ {
+      "name" : "currentProjectURL",
+      "value" : "${pdu}",
+      "prefix" : "\nThe current project root directory URL: "
+    }, {
+      "name" : "currentMapURL",
+      "value" : "${currentMapURL}",
+      "prefix" : "\nThe current DITA Map URL: "
+    }, {
+      "name" : "currentEditorURL",
+      "value" : "${currentFileURL}",
+      "prefix" : "\nThe currently edited document URL: "
+    }, {
+      "name" : "documentType",
+      "value" : "${contentTypeDescription}",
+      "prefix" : "\nThe type of the current edited document: "
+    }, {
+      "name" : "contextPrompt",
+      "value" : "${contextPrompt}"
+    } ],
+    "parameters" : {
+      "temperature" : 0.0,
+      "max_tokens" : 0,
+      "function_refs" : [ {
+        "ref" : "get_current_document_location"
+      }, {
+        "ref" : "get_document_content"
+      }, {
+        "ref" : "get_text_around_caret"
+      }, {
+        "ref" : "search_project_resources"
+      }, {
+        "ref" : "grep_project"
+      }, {
+        "ref" : "list_dir"
+      }, {
+        "ref" : "get_ditamap_structure"
+      }, {
+        "ref" : "save_document"
+      }, {
+        "ref" : "edit_document"
+      }, {
+        "ref" : "add_dita_reference_to_ditamap"
+      }, {
+        "ref" : "invoke_ai_action"
+      }, {
+        "ref" : "retrieve_ai_actions"
+      }, {
+        "ref" : "get_xml_refactoring_operations"
+      }, {
+        "ref" : "get_xml_refactoring_operation_params"
+      }, {
+        "ref" : "refactor_xml_with_operation"
+      }, {
+        "ref" : "refactor_xml_with_xslt"
+      }, {
+        "ref" : "store_to_memory"
+      }, {
+        "ref" : "resolve_dita_reference"
+      }, {
+        "ref" : "find_reusable_components"
+      }, {
+        "ref" : "get_dita_keyrefs"
+      }, {
+        "ref" : "validate_content"
+      }, {
+        "ref" : "validate_current_document"
+      }, {
+        "ref" : "term_check_document_content"
+      }, {
+        "ref" : "term_check_current_document"
+      } ]
+    },
+    "quick-assist" : false,
+    "embed-assist" : false,
+    "isBuiltinAction" : true
+  },
+  "actionParameters" : {
+    "currentMapURL" : "\nThe current DITA Map URL: file:/D:/Git-workspace/tcworld-ai-mcp/MCP-Usage-Samples/mobile-phone-project/mobile-phone.ditamap",
+    "currentEditorURL" : "\nThe currently edited document URL: https://software-archive.sync.ro/InstData/Addons/default/updateSitePositron.xml",
+    "documentType" : "\nThe type of the current edited document: text/xml",
+    "currentProjectURL" : "\nThe current project root directory URL: file:/D:/Git-workspace/tcworld-ai-mcp/MCP-Usage-Samples/",
+    "contextPrompt" : "We work in the MCP-Usage-Samples github repository, https://github.com/AlexJitianu/MCP-Usage-Samples"
+  },
+  "name" : "- read issue #1, - make a plan: what new topics...",
+  "description" : "- read issue #1, \n- make a plan: what new topics to create, how to update my existing topics to mirror those changes, make references\n- execute the plan",
+  "initialMessages" : [ ],
+  "tree" : {
+    "conversationId" : 1762522117416,
+    "root" : {
+      "type" : "MessageNode",
+      "contentNodes" : [ {
+        "type" : "MessageNode",
+        "message" : {
+          "role" : "user",
+          "content" : "- read issue #1, \n- make a plan: what new topics to create, how to update my existing topics to mirror those changes, make references\n- execute the plan"
+        },
+        "contentNodes" : [ {
+          "type" : "tools",
+          "message" : {
+            "role" : "assistant",
+            "content" : [ ],
+            "tool_calls" : [ {
+              "index" : 0,
+              "id" : "call_EGQaWNTiaOKvTJXQbQCs6AjR",
+              "type" : "function",
+              "function" : {
+                "name" : "github_issue_read",
+                "arguments" : "{\"issue_number\":1,\"method\":\"get\",\"owner\":\"AlexJitianu\",\"repo\":\"MCP-Usage-Samples\"}"
+              }
+            } ]
+          },
+          "contentNodes" : [ {
+            "type" : "tools",
+            "message" : {
+              "role" : "assistant",
+              "content" : [ ],
+              "tool_calls" : [ {
+                "index" : 0,
+                "id" : "call_5sLAtKWrBisHHXMA2MdwNg2J",
+                "type" : "function",
+                "function" : {
+                  "name" : "search_project_resources",
+                  "arguments" : "{\"currentPage\": 1, \"defaultJoinOperator\": \"AND\", \"keywords\": \"features camera\", \"pageSize\": 5}"
+                }
+              }, {
+                "index" : 1,
+                "id" : "call_7QdFNUQYEsUnDaKJgMDj3QIw",
+                "type" : "function",
+                "function" : {
+                  "name" : "search_project_resources",
+                  "arguments" : "{\"currentPage\": 1, \"defaultJoinOperator\": \"AND\", \"keywords\": \"battery charging\", \"pageSize\": 5}"
+                }
+              } ]
+            },
+            "contentNodes" : [ {
+              "type" : "tools",
+              "message" : {
+                "role" : "assistant",
+                "content" : [ ],
+                "tool_calls" : [ {
+                  "index" : 0,
+                  "id" : "call_qj4BGqfQvaxHrGNWxaydhnXI",
+                  "type" : "function",
+                  "function" : {
+                    "name" : "get_document_content",
+                    "arguments" : "{\"docURL\": \"file:/D:/Git-workspace/tcworld-ai-mcp/MCP-Usage-Samples/mobile-phone-project/features.dita\"}"
+                  }
+                }, {
+                  "index" : 1,
+                  "id" : "call_bRs6HrHJXRTW9P976Drmz6pF",
+                  "type" : "function",
+                  "function" : {
+                    "name" : "get_document_content",
+                    "arguments" : "{\"docURL\": \"file:/D:/Git-workspace/tcworld-ai-mcp/MCP-Usage-Samples/mobile-phone-project/camera.dita\"}"
+                  }
+                }, {
+                  "index" : 2,
+                  "id" : "call_Nvw0Fxr0pec26u9Lg8yXkJYh",
+                  "type" : "function",
+                  "function" : {
+                    "name" : "get_document_content",
+                    "arguments" : "{\"docURL\": \"file:/D:/Git-workspace/tcworld-ai-mcp/MCP-Usage-Samples/mobile-phone-project/battery.dita\"}"
+                  }
+                } ]
+              },
+              "contentNodes" : [ {
+                "type" : "tools",
+                "message" : {
+                  "role" : "assistant",
+                  "content" : [ ],
+                  "tool_calls" : [ {
+                    "index" : 0,
+                    "id" : "call_IeBRFTZ3lBap8QaqZAQpXpCO",
+                    "type" : "function",
+                    "function" : {
+                      "name" : "get_ditamap_structure",
+                      "arguments" : "{\"includeDescendants\":true,\"maxDepth\":2,\"topicURL\":\"file:/D:/Git-workspace/tcworld-ai-mcp/MCP-Usage-Samples/mobile-phone-project/features.dita\"}"
+                    }
+                  } ]
+                },
+                "contentNodes" : [ {
+                  "type" : "tools",
+                  "message" : {
+                    "role" : "assistant",
+                    "content" : "Here is the plan to address issue #1 (\"Update documentation for new camera night mode feature\"):\n\n**Plan**\n\n1. **Create a new topic:**\n   - \"Night Mode\" (as a new DITA topic) to describe the feature, how to use it, tips for best results, and its limitations (e.g., increased battery usage).\n\n2. **Update existing topics:**\n   - **features.dita**: Add \"Night Mode\" to the list of features.\n   - **camera.dita**: Add a reference and a brief description of Night Mode, with a link to the new topic.\n   - **battery.dita**: Add a note about increased battery usage when Night Mode is active.\n\n3. **Update DITA Map:**\n   - Add the new \"Night Mode\" topic to the DITA map, as a child or sibling of the Camera topic.\n\n**Execution Steps**\n- Create night-mode.dita with appropriate content.\n- Edit features.dita to add Night Mode to the feature list.\n- Edit camera.dita to mention Night Mode and link to the new topic.\n- Edit battery.dita to mention battery impact of Night Mode.\n- Add night-mode.dita to the DITA map, likely after camera.dita.\n\nI will now execute this plan.",
+                    "tool_calls" : [ {
+                      "index" : 0,
+                      "id" : "call_Fe55baGxDgNxTLy6pWbnVb8m",
+                      "type" : "function",
+                      "function" : {
+                        "name" : "save_document",
+                        "arguments" : "{\"content\":\"<?xml version=\\\"1.0\\\" encoding=\\\"UTF-8\\\"?>\\n<!DOCTYPE topic PUBLIC \\\"-//OASIS//DTD DITA Topic//EN\\\" \\\"topic.dtd\\\">\\n<topic id=\\\"night-mode\\\">\\n  <title>Night Mode</title>\\n  <shortdesc>Night Mode allows you to take better photos in low-light conditions using your mobile phone's camera.</shortdesc>\\n  <body>\\n    <p>Night Mode is a camera feature designed to improve photo quality in low-light environments. When enabled, the camera uses advanced processing to brighten images and reduce noise.</p>\\n    <p>To use Night Mode, open the camera app and select the Night Mode option. Hold your phone steady while taking the photo for best results.</p>\\n    <p><b>Tips:</b></p>\\n    <ul>\\n      <li>Keep your phone as still as possible during the exposure.</li>\\n      <li>Night Mode works best in very low-light conditions.</li>\\n      <li>Using Night Mode may increase battery usage.</li>\\n    </ul>\\n    <p><b>Limitations:</b></p>\\n    <ul>\\n      <li>Night Mode may not be available for all camera modes.</li>\\n      <li>Photos may take longer to process.</li>\\n      <li>Increased battery usage when active.</li>\\n    </ul>\\n  </body>\\n</topic>\\n\",\"url\":\"file:/D:/Git-workspace/tcworld-ai-mcp/MCP-Usage-Samples/mobile-phone-project/night-mode.dita\",\"validate\":\"true\"}"
+                      }
+                    } ]
+                  },
+                  "contentNodes" : [ {
+                    "type" : "tools",
+                    "message" : {
+                      "role" : "assistant",
+                      "content" : [ ],
+                      "tool_calls" : [ {
+                        "index" : 0,
+                        "id" : "call_M0rB0MPNqUJk3BXEqvCEoMDl",
+                        "type" : "function",
+                        "function" : {
+                          "name" : "save_document",
+                          "arguments" : "{\"content\": \"<?xml version=\\\"1.0\\\" encoding=\\\"UTF-8\\\"?>\\n<!DOCTYPE topic PUBLIC \\\"-//OASIS//DTD DITA Topic//EN\\\" \\\"topic.dtd\\\">\\n<topic id=\\\"features\\\">\\n  <title>Features</title>\\n  <body>\\n    <p>Your mobile phone includes the following features:</p>\\n    <ul>\\n      <li>High-resolution camera</li>\\n      <li>Night Mode</li>\\n      <li>Long-lasting battery</li>\\n      <li>Fast processor</li>\\n      <li>5G connectivity</li>\\n    </ul>\\n  </body>\\n</topic>\\n\", \"url\": \"file:/D:/Git-workspace/tcworld-ai-mcp/MCP-Usage-Samples/mobile-phone-project/features.dita\", \"validate\": \"true\"}"
+                        }
+                      }, {
+                        "index" : 1,
+                        "id" : "call_qjVyMI8736kwrHzwHS4gvb5h",
+                        "type" : "function",
+                        "function" : {
+                          "name" : "save_document",
+                          "arguments" : "{\"content\": \"<?xml version=\\\"1.0\\\" encoding=\\\"UTF-8\\\"?>\\n<!DOCTYPE topic PUBLIC \\\"-//OASIS//DTD DITA Topic//EN\\\" \\\"topic.dtd\\\">\\n<topic id=\\\"camera\\\">\\n  <title>Camera</title>\\n  <body>\\n    <p>Your mobile phone includes a high-resolution camera. You can use it to take clear photos and record videos. The camera supports features such as autofocus, digital zoom, and various shooting modes to help you capture the best moments.</p>\\n    <p><b>Night Mode:</b> The camera includes a Night Mode feature for better photos in low-light conditions. <xref href=\\\"night-mode.dita\\\">Learn more about Night Mode</xref>.</p>\\n  </body>\\n</topic>\", \"url\": \"file:/D:/Git-workspace/tcworld-ai-mcp/MCP-Usage-Samples/mobile-phone-project/camera.dita\", \"validate\": \"true\"}"
+                        }
+                      }, {
+                        "index" : 2,
+                        "id" : "call_Yd68j7WrKesFMyStvQH2gXdv",
+                        "type" : "function",
+                        "function" : {
+                          "name" : "save_document",
+                          "arguments" : "{\"content\": \"<?xml version=\\\"1.0\\\" encoding=\\\"UTF-8\\\"?>\\n<!DOCTYPE topic PUBLIC \\\"-//OASIS//DTD DITA Topic//EN\\\" \\\"topic.dtd\\\">\\n<topic id=\\\"battery\\\">\\n  <title>Battery and Charging</title>\\n  <body>\\n    <p>The mobile phone is equipped with a long-lasting battery. For best results, use the supplied charger and follow the charging instructions in this guide.</p>\\n    <note>Using Night Mode may increase battery usage due to advanced image processing.</note>\\n  </body>\\n</topic>\\n\", \"url\": \"file:/D:/Git-workspace/tcworld-ai-mcp/MCP-Usage-Samples/mobile-phone-project/battery.dita\", \"validate\": \"true\"}"
+                        }
+                      } ]
+                    },
+                    "contentNodes" : [ {
+                      "type" : "tools",
+                      "message" : {
+                        "role" : "assistant",
+                        "content" : [ ],
+                        "tool_calls" : [ {
+                          "index" : 0,
+                          "id" : "call_H5gk4N0TjBYqhSMISL9INhxM",
+                          "type" : "function",
+                          "function" : {
+                            "name" : "add_dita_reference_to_ditamap",
+                            "arguments" : "{\"anchorURL\":\"file:/D:/Git-workspace/tcworld-ai-mcp/MCP-Usage-Samples/mobile-phone-project/camera.dita\",\"ditaMapURL\":\"file:/D:/Git-workspace/tcworld-ai-mcp/MCP-Usage-Samples/mobile-phone-project/mobile-phone.ditamap\",\"positionLocation\":\"After\",\"resourceURL\":\"file:/D:/Git-workspace/tcworld-ai-mcp/MCP-Usage-Samples/mobile-phone-project/night-mode.dita\"}"
+                          }
+                        } ]
+                      },
+                      "contentNodes" : [ {
+                        "type" : "MessageNode",
+                        "message" : {
+                          "role" : "assistant",
+                          "content" : "The plan for updating the documentation for the new camera Night Mode feature has been executed:\n\n1. Created a new topic: \"Night Mode\" (night-mode.dita) describing the feature, usage tips, and limitations.\n2. Updated features.dita to add \"Night Mode\" to the feature list.\n3. Updated camera.dita to mention Night Mode and link to the new topic.\n4. Updated battery.dita to mention increased battery usage when Night Mode is active.\n5. Added the new Night Mode topic to the DITA map, immediately after the Camera topic.\n\nAll changes are now complete and reflected in your documentation set. If you want to review any of the updated or new content, let me know!"
+                        },
+                        "contentNodes" : [ {
+                          "type" : "MessageNode",
+                          "message" : {
+                            "role" : "user",
+                            "content" : "I want some references from the notes to the night mode topic"
+                          },
+                          "contentNodes" : [ {
+                            "type" : "tools",
+                            "message" : {
+                              "role" : "assistant",
+                              "content" : [ ],
+                              "tool_calls" : [ {
+                                "index" : 0,
+                                "id" : "call_mloPkDAElCylAZLlwsR17dJP",
+                                "type" : "function",
+                                "function" : {
+                                  "name" : "list_dir",
+                                  "arguments" : "{\"explanation\":\"Check if a night mode topic already exists or if it needs to be created, and to determine its filename for referencing.\",\"folder_path\":\"D:/Git-workspace/tcworld-ai-mcp/MCP-Usage-Samples/mobile-phone-project/\"}"
+                                }
+                              } ]
+                            },
+                            "contentNodes" : [ {
+                              "type" : "tools",
+                              "message" : {
+                                "role" : "assistant",
+                                "content" : [ ],
+                                "tool_calls" : [ {
+                                  "index" : 0,
+                                  "id" : "call_DriTYp12ilExYxLxb1jyAhl4",
+                                  "type" : "function",
+                                  "function" : {
+                                    "name" : "get_document_content",
+                                    "arguments" : "{\"docURL\":\"file:/D:/Git-workspace/tcworld-ai-mcp/MCP-Usage-Samples/mobile-phone-project/night-mode.dita\"}"
+                                  }
+                                } ]
+                              },
+                              "contentNodes" : [ {
+                                "type" : "tools",
+                                "message" : {
+                                  "role" : "assistant",
+                                  "content" : [ ],
+                                  "tool_calls" : [ {
+                                    "index" : 0,
+                                    "id" : "call_kBEXYArx0qv72I94Hb0zROUs",
+                                    "type" : "function",
+                                    "function" : {
+                                      "name" : "get_document_content",
+                                      "arguments" : "{\"docURL\":\"file:/D:/Git-workspace/tcworld-ai-mcp/MCP-Usage-Samples/mobile-phone-project/battery.dita\"}"
+                                    }
+                                  } ]
+                                },
+                                "contentNodes" : [ {
+                                  "type" : "tools",
+                                  "message" : {
+                                    "role" : "assistant",
+                                    "content" : "To add references from the notes in the battery topic to the Night Mode topic, I will update the note in battery.dita to include a cross-reference (<xref>) to night-mode.dita.\n\nI will proceed to make this change now.",
+                                    "tool_calls" : [ {
+                                      "index" : 0,
+                                      "id" : "call_XoLlKJB55JFo7ksIT0USofUg",
+                                      "type" : "function",
+                                      "function" : {
+                                        "name" : "save_document",
+                                        "arguments" : "{\"content\":\"<?xml version=\\\"1.0\\\" encoding=\\\"UTF-8\\\"?>\\n<!DOCTYPE topic PUBLIC \\\"-//OASIS//DTD DITA Topic//EN\\\" \\\"topic.dtd\\\">\\n<topic id=\\\"battery\\\">\\n  <title>Battery and Charging</title>\\n  <body>\\n    <p>The mobile phone is equipped with a long-lasting battery. For best results, use the supplied charger and follow the charging instructions in this guide.</p>\\n    <note>Using <xref href=\\\"night-mode.dita\\\">Night Mode</xref> may increase battery usage due to advanced image processing.</note>\\n  </body>\\n</topic>\\n\",\"url\":\"file:/D:/Git-workspace/tcworld-ai-mcp/MCP-Usage-Samples/mobile-phone-project/battery.dita\",\"validate\":\"true\"}"
+                                      }
+                                    } ]
+                                  },
+                                  "contentNodes" : [ {
+                                    "type" : "MessageNode",
+                                    "message" : {
+                                      "role" : "assistant",
+                                      "content" : "The note in the \"Battery and Charging\" topic now includes a direct reference to the Night Mode topic using a DITA <xref>. This allows users to easily access more information about Night Mode and its impact on battery usage.\n\nIf you want similar references in other topics or need further adjustments, let me know!"
+                                    },
+                                    "contentNodes" : [ {
+                                      "type" : "MessageNode",
+                                      "message" : {
+                                        "role" : "user",
+                                        "content" : "The following file changes were rejected:\nbattery.dita\ncamera.dita\nfeatures.dita\nmobile-phone.ditamap\nnight-mode.dita"
+                                      },
+                                      "contentNodes" : [ ]
+                                    } ],
+                                    "engine" : "gpt-4.1-2025-04-14"
+                                  } ],
+                                  "engine" : "gpt-4.1-2025-04-14",
+                                  "tool_calls_info" : [ {
+                                    "tool_message" : {
+                                      "role" : "tool",
+                                      "content" : "Content successfully saved",
+                                      "tool_call_id" : "call_XoLlKJB55JFo7ksIT0USofUg"
+                                    },
+                                    "tool_call_description" : "Write document (file:/D:/Git-workspace/tcworld-ai-mcp/MCP-Usage-Samples/mobile-phone-project/battery.dita)"
+                                  } ]
+                                } ],
+                                "engine" : "gpt-4.1-2025-04-14",
+                                "tool_calls_info" : [ {
+                                  "tool_message" : {
+                                    "role" : "tool",
+                                    "content" : "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE topic PUBLIC \"-//OASIS//DTD DITA Topic//EN\" \"topic.dtd\">\n<topic id=\"battery\">\n  <title>Battery and Charging</title>\n  <body>\n    <p>The mobile phone is equipped with a long-lasting battery. For best results, use the supplied charger and follow the charging instructions in this guide.</p>\n    <note>Using Night Mode may increase battery usage due to advanced image processing.</note>\n  </body>\n</topic>\n",
+                                    "tool_call_id" : "call_kBEXYArx0qv72I94Hb0zROUs"
+                                  },
+                                  "tool_call_description" : "Read document (file:/D:/Git-workspace/tcworld-ai-mcp/MCP-Usage-Samples/mobile-phone-project/battery.dita)"
+                                } ]
+                              } ],
+                              "engine" : "gpt-4.1-2025-04-14",
+                              "tool_calls_info" : [ {
+                                "tool_message" : {
+                                  "role" : "tool",
+                                  "content" : "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE topic PUBLIC \"-//OASIS//DTD DITA Topic//EN\" \"topic.dtd\">\n<topic id=\"night-mode\">\n  <title>Night Mode</title>\n  <shortdesc>Night Mode allows you to take better photos in low-light conditions using your mobile phone's camera.</shortdesc>\n  <body>\n    <p>Night Mode is a camera feature designed to improve photo quality in low-light environments. When enabled, the camera uses advanced processing to brighten images and reduce noise.</p>\n    <p>To use Night Mode, open the camera app and select the Night Mode option. Hold your phone steady while taking the photo for best results.</p>\n    <p><b>Tips:</b></p>\n    <ul>\n      <li>Keep your phone as still as possible during the exposure.</li>\n      <li>Night Mode works best in very low-light conditions.</li>\n      <li>Using Night Mode may increase battery usage.</li>\n    </ul>\n    <p><b>Limitations:</b></p>\n    <ul>\n      <li>Night Mode may not be available for all camera modes.</li>\n      <li>Photos may take longer to process.</li>\n      <li>Increased battery usage when active.</li>\n    </ul>\n  </body>\n</topic>\n",
+                                  "tool_call_id" : "call_DriTYp12ilExYxLxb1jyAhl4"
+                                },
+                                "tool_call_description" : "Read document (file:/D:/Git-workspace/tcworld-ai-mcp/MCP-Usage-Samples/mobile-phone-project/night-mode.dita)"
+                              } ]
+                            } ],
+                            "engine" : "gpt-4.1-2025-04-14",
+                            "tool_calls_info" : [ {
+                              "tool_message" : {
+                                "role" : "tool",
+                                "content" : "{\"entries\":[{\"name\":\"battery.dita\"},{\"name\":\"camera.dita\"},{\"name\":\"features.dita\"},{\"name\":\"introduction.dita\"},{\"name\":\"mobile-phone.ditamap\"},{\"name\":\"night-mode.dita\"}]}",
+                                "tool_call_id" : "call_mloPkDAElCylAZLlwsR17dJP"
+                              },
+                              "tool_call_description" : "List files in folder (D:/Git-workspace/tcworld-ai-mcp/MCP-Usage-Samples/mobile-phone-project/)\nCheck if a night mode topic already exists or if it needs to be created, and to determine its filename for referencing."
+                            } ]
+                          } ]
+                        } ],
+                        "engine" : "gpt-4.1-2025-04-14"
+                      } ],
+                      "engine" : "gpt-4.1-2025-04-14",
+                      "tool_calls_info" : [ {
+                        "tool_message" : {
+                          "role" : "tool",
+                          "content" : "Added to Dita Map structure",
+                          "tool_call_id" : "call_H5gk4N0TjBYqhSMISL9INhxM"
+                        },
+                        "tool_call_description" : "Add DITA map reference (file:/D:/Git-workspace/tcworld-ai-mcp/MCP-Usage-Samples/mobile-phone-project/mobile-phone.ditamap)"
+                      } ]
+                    } ],
+                    "engine" : "gpt-4.1-2025-04-14",
+                    "tool_calls_info" : [ {
+                      "tool_message" : {
+                        "role" : "tool",
+                        "content" : "Content successfully saved",
+                        "tool_call_id" : "call_M0rB0MPNqUJk3BXEqvCEoMDl"
+                      },
+                      "tool_call_description" : "Write document (file:/D:/Git-workspace/tcworld-ai-mcp/MCP-Usage-Samples/mobile-phone-project/features.dita)"
+                    }, {
+                      "tool_message" : {
+                        "role" : "tool",
+                        "content" : "Content successfully saved",
+                        "tool_call_id" : "call_qjVyMI8736kwrHzwHS4gvb5h"
+                      },
+                      "tool_call_description" : "Write document (file:/D:/Git-workspace/tcworld-ai-mcp/MCP-Usage-Samples/mobile-phone-project/camera.dita)"
+                    }, {
+                      "tool_message" : {
+                        "role" : "tool",
+                        "content" : "Content successfully saved",
+                        "tool_call_id" : "call_Yd68j7WrKesFMyStvQH2gXdv"
+                      },
+                      "tool_call_description" : "Write document (file:/D:/Git-workspace/tcworld-ai-mcp/MCP-Usage-Samples/mobile-phone-project/battery.dita)"
+                    } ]
+                  } ],
+                  "engine" : "gpt-4.1-2025-04-14",
+                  "tool_calls_info" : [ {
+                    "tool_message" : {
+                      "role" : "tool",
+                      "content" : "Content successfully saved",
+                      "tool_call_id" : "call_Fe55baGxDgNxTLy6pWbnVb8m"
+                    },
+                    "tool_call_description" : "Write document (file:/D:/Git-workspace/tcworld-ai-mcp/MCP-Usage-Samples/mobile-phone-project/night-mode.dita)"
+                  } ]
+                } ],
+                "engine" : "gpt-4.1-2025-04-14",
+                "tool_calls_info" : [ {
+                  "tool_message" : {
+                    "role" : "tool",
+                    "content" : "{\"name\":\"Mobile Phone User Guide\",\"url\":\"file:/D:/Git-workspace/tcworld-ai-mcp/MCP-Usage-Samples/mobile-phone-project/mobile-phone.ditamap\",\"children\":[{\"name\":\"Introduction\",\"url\":\"file:/D:/Git-workspace/tcworld-ai-mcp/MCP-Usage-Samples/mobile-phone-project/introduction.dita\"},{\"name\":\"Features\",\"url\":\"file:/D:/Git-workspace/tcworld-ai-mcp/MCP-Usage-Samples/mobile-phone-project/features.dita\",\"current\":true},{\"name\":\"Battery and Charging\",\"url\":\"file:/D:/Git-workspace/tcworld-ai-mcp/MCP-Usage-Samples/mobile-phone-project/battery.dita\"},{\"name\":\"Camera\",\"url\":\"file:/D:/Git-workspace/tcworld-ai-mcp/MCP-Usage-Samples/mobile-phone-project/camera.dita\"}]}",
+                    "tool_call_id" : "call_IeBRFTZ3lBap8QaqZAQpXpCO"
+                  },
+                  "tool_call_description" : "Get DITA map structure"
+                } ]
+              } ],
+              "engine" : "gpt-4.1-2025-04-14",
+              "tool_calls_info" : [ {
+                "tool_message" : {
+                  "role" : "tool",
+                  "content" : "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE topic PUBLIC \"-//OASIS//DTD DITA Topic//EN\" \"topic.dtd\">\n<topic id=\"features\">\n  <title>Features</title>\n  <body>\n    <p>Your mobile phone includes the following features:</p>\n    <ul>\n      <li>High-resolution camera</li>\n      <li>Long-lasting battery</li>\n      <li>Fast processor</li>\n      <li>5G connectivity</li>\n    </ul>\n  </body>\n</topic>\n",
+                  "tool_call_id" : "call_qj4BGqfQvaxHrGNWxaydhnXI"
+                },
+                "tool_call_description" : "Read document (file:/D:/Git-workspace/tcworld-ai-mcp/MCP-Usage-Samples/mobile-phone-project/features.dita)"
+              }, {
+                "tool_message" : {
+                  "role" : "tool",
+                  "content" : "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE topic PUBLIC \"-//OASIS//DTD DITA Topic//EN\" \"topic.dtd\">\n<topic id=\"camera\">\n  <title>Camera</title>\n  <body>\n    <p>Your mobile phone includes a high-resolution camera. You can use it to take clear photos and record videos. The camera supports features such as autofocus, digital zoom, and various shooting modes to help you capture the best moments.</p>\n  </body>\n</topic>",
+                  "tool_call_id" : "call_bRs6HrHJXRTW9P976Drmz6pF"
+                },
+                "tool_call_description" : "Read document (file:/D:/Git-workspace/tcworld-ai-mcp/MCP-Usage-Samples/mobile-phone-project/camera.dita)"
+              }, {
+                "tool_message" : {
+                  "role" : "tool",
+                  "content" : "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE topic PUBLIC \"-//OASIS//DTD DITA Topic//EN\" \"topic.dtd\">\n<topic id=\"battery\">\n  <title>Battery and Charging</title>\n  <body>\n    <p>The mobile phone is equipped with a long-lasting battery. For best results, use the supplied charger and follow the charging instructions in this guide.</p>\n  </body>\n</topic>\n",
+                  "tool_call_id" : "call_Nvw0Fxr0pec26u9Lg8yXkJYh"
+                },
+                "tool_call_description" : "Read document (file:/D:/Git-workspace/tcworld-ai-mcp/MCP-Usage-Samples/mobile-phone-project/battery.dita)"
+              } ]
+            } ],
+            "engine" : "gpt-4.1-2025-04-14",
+            "tool_calls_info" : [ {
+              "tool_message" : {
+                "role" : "tool",
+                "content" : "{\"document-overviews\":[{\"documentUrl\":\"file:/D:/Git-workspace/tcworld-ai-mcp/MCP-Usage-Samples/chats/create-camera-topic.json\",\"contentOverview\":\"{ &quot;actionDetails&quot; : { &quot;id&quot; : &quot;pseudoaction.chat.message.dita.agent&quot;, &quot;categoryId&quot; : &quot;Chat modes&quot;, &quot;type&quot; : &quot;pseudo&quot;, &quot;title&quot; : &quot;DITA Agent&quot;, &quot;short-description&quot; : &quot;DITA Agent&quot;, &quot;description&quot; : &quot;Chat with the AI about your DITA XML \"},{\"documentUrl\":\"file:/D:/Git-workspace/tcworld-ai-mcp/MCP-Usage-Samples/mobile-phone-project/camera.dita\",\"contentOverview\":\"Camera Your mobile phone includes a high-resolution camera. You can use it to take clear photos and record videos. The camera supports features such as autofocus, digital zoom, and various shooting modes to help you capture the best moments. \"},{\"documentUrl\":\"file:/D:/Git-workspace/tcworld-ai-mcp/MCP-Usage-Samples/mobile-phone-project/features.dita\",\"contentOverview\":\"Features Your mobile phone includes the following features: High-resolution camera Long-lasting battery Fast processor 5G connectivity \"}],\"totalResultsCount\":3,\"pageSize\":5,\"currentPage\":1}",
+                "tool_call_id" : "call_5sLAtKWrBisHHXMA2MdwNg2J"
+              },
+              "tool_call_description" : "Search in project (features camera)"
+            }, {
+              "tool_message" : {
+                "role" : "tool",
+                "content" : "{\"document-overviews\":[{\"documentUrl\":\"file:/D:/Git-workspace/tcworld-ai-mcp/MCP-Usage-Samples/mobile-phone-project/battery.dita\",\"contentOverview\":\"Battery and Charging The mobile phone is equipped with a long-lasting battery. For best results, use the supplied charger and follow the charging instructions in this guide. \"},{\"documentUrl\":\"file:/D:/Git-workspace/tcworld-ai-mcp/MCP-Usage-Samples/mobile-phone-project/mobile-phone.ditamap\",\"contentOverview\":\"\"},{\"documentUrl\":\"file:/D:/Git-workspace/tcworld-ai-mcp/MCP-Usage-Samples/chats/create-camera-topic.json\",\"contentOverview\":\"{ &quot;actionDetails&quot; : { &quot;id&quot; : &quot;pseudoaction.chat.message.dita.agent&quot;, &quot;categoryId&quot; : &quot;Chat modes&quot;, &quot;type&quot; : &quot;pseudo&quot;, &quot;title&quot; : &quot;DITA Agent&quot;, &quot;short-description&quot; : &quot;DITA Agent&quot;, &quot;description&quot; : &quot;Chat with the AI about your DITA XML \"}],\"totalResultsCount\":3,\"pageSize\":5,\"currentPage\":1}",
+                "tool_call_id" : "call_7QdFNUQYEsUnDaKJgMDj3QIw"
+              },
+              "tool_call_description" : "Search in project (battery charging)"
+            } ]
+          } ],
+          "engine" : "gpt-4.1-2025-04-14",
+          "tool_calls_info" : [ {
+            "tool_message" : {
+              "role" : "tool",
+              "content" : "[TextContent[annotations=null, text={\"id\":3600198216,\"number\":1,\"state\":\"open\",\"locked\":false,\"title\":\"Update documentation for new camera night mode feature\",\"body\":\"We are planning to introduce a new \\\"Night Mode\\\" for the high-resolution camera feature described in the mobile phone DITA map (see features.dita).\\n\\n## Discussion\\n**User1:** The new Night Mode will allow users to take better photos in low-light conditions. We should update the documentation to include this feature and provide usage tips.\\n\\n**User2:** Agreed. We should also mention any limitations, such as increased battery usage when Night Mode is active.\\n\\n**User1:** Good point. Let's add a section to the Features topic and update the Battery and Charging topic to mention the impact of Night Mode on battery life.\\n\\n---\\nThis issue will track the required documentation updates once the feature is released.\",\"author_association\":\"OWNER\",\"user\":{\"login\":\"AlexJitianu\",\"id\":7802649,\"node_id\":\"MDQ6VXNlcjc4MDI2NDk=\",\"avatar_url\":\"https://avatars.githubusercontent.com/u/7802649?v=4\",\"html_url\":\"https://github.com/AlexJitianu\",\"gravatar_id\":\"\",\"type\":\"User\",\"site_admin\":false,\"url\":\"https://api.github.com/users/AlexJitianu\",\"events_url\":\"https://api.github.com/users/AlexJitianu/events{/privacy}\",\"following_url\":\"https://api.github.com/users/AlexJitianu/following{/other_user}\",\"followers_url\":\"https://api.github.com/users/AlexJitianu/followers\",\"gists_url\":\"https://api.github.com/users/AlexJitianu/gists{/gist_id}\",\"organizations_url\":\"https://api.github.com/users/AlexJitianu/orgs\",\"received_events_url\":\"https://api.github.com/users/AlexJitianu/received_events\",\"repos_url\":\"https://api.github.com/users/AlexJitianu/repos\",\"starred_url\":\"https://api.github.com/users/AlexJitianu/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/AlexJitianu/subscriptions\"},\"comments\":0,\"created_at\":\"2025-11-07T12:48:37Z\",\"updated_at\":\"2025-11-07T12:48:37Z\",\"url\":\"https://api.github.com/repos/AlexJitianu/MCP-Usage-Samples/issues/1\",\"html_url\":\"https://github.com/AlexJitianu/MCP-Usage-Samples/issues/1\",\"comments_url\":\"https://api.github.com/repos/AlexJitianu/MCP-Usage-Samples/issues/1/comments\",\"events_url\":\"https://api.github.com/repos/AlexJitianu/MCP-Usage-Samples/issues/1/events\",\"labels_url\":\"https://api.github.com/repos/AlexJitianu/MCP-Usage-Samples/issues/1/labels{/name}\",\"repository_url\":\"https://api.github.com/repos/AlexJitianu/MCP-Usage-Samples\",\"reactions\":{\"total_count\":0,\"+1\":0,\"-1\":0,\"laugh\":0,\"confused\":0,\"heart\":0,\"hooray\":0,\"rocket\":0,\"eyes\":0,\"url\":\"https://api.github.com/repos/AlexJitianu/MCP-Usage-Samples/issues/1/reactions\"},\"node_id\":\"I_kwDOQRJ_RM7WlqpI\"}, meta=null]]",
+              "tool_call_id" : "call_EGQaWNTiaOKvTJXQbQCs6AjR"
+            },
+            "tool_call_description" : "[github] issue_read"
+          } ]
+        } ]
+      } ]
+    }
+  },
+  "index" : [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
+}
