@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map title="Mobile Phone User Guide">
+  <topicref href="introduction.dita" navtitle="Introduction"/>
+  <topicref href="features.dita" navtitle="Features"/>
+  <topicref href="battery.dita" navtitle="Battery and Charging"/>
+</map>
