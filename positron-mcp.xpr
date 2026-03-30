@@ -50,6 +50,10 @@
                         <Boolean>true</Boolean>
                     </entry>
                     <entry>
+                        <String>enable.project.master.files.support</String>
+                        <Boolean>true</Boolean>
+                    </entry>
+                    <entry>
                         <String>key.custom.editor.variables.option.pane</String>
                         <Boolean>true</Boolean>
                     </entry>
