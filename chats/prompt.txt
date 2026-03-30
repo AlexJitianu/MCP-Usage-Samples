@@ -3,4 +3,8 @@
 - execute the plan
 
 =====
+
+mention the name of the phone in the new topic
+
+=====
 You mentioned the night mode in several topics, verify if you added xrefs. always remember to add references to the topic in such cases.
