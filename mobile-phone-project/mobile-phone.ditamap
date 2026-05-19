@@ -1,8 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
 <map title="Mobile Phone User Guide">
+  <keydef keys="phone-name">
+    <topicmeta>
+      <keywords>
+        <keyword>Galaxy X1</keyword>
+      </keywords>
+    </topicmeta>
+  </keydef>
   <topicref href="introduction.dita" navtitle="Introduction"/>
   <topicref href="features.dita" navtitle="Features"/>
   <topicref href="battery.dita" navtitle="Battery and Charging"/>
-  <topicref href="camera.dita" navtitle="Camera"/>
+  <topicref href="camera.dita" navtitle="Camera">
+    <topicref href="night-mode.dita" navtitle="Using Night Mode"/>
+  </topicref>
 </map>

@@ -5,10 +5,11 @@
   <body>
     <p>Your mobile phone includes the following features:</p>
     <ul>
-      <li>High-resolution camera</li>
+      <li>High-resolution camera with Night Mode for low-light photography</li>
       <li>Long-lasting battery</li>
       <li>Fast processor</li>
       <li>5G connectivity</li>
     </ul>
+    <p>For more information about camera capabilities, see <xref href="camera.dita">Camera</xref> and <xref href="night-mode.dita">Using Night Mode</xref>.</p>
   </body>
 </topic>
