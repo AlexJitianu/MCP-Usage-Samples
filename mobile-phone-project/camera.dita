@@ -3,6 +3,7 @@
 <topic id="camera">
   <title>Camera</title>
   <body>
-    <p>Your mobile phone includes a high-resolution camera. You can use it to take clear photos and record videos. The camera supports features such as autofocus, digital zoom, and various shooting modes to help you capture the best moments.</p>
+    <p>Your mobile phone includes a high-resolution camera. You can use it to take clear photos and record videos. The camera supports features such as autofocus, digital zoom, Night Mode, and various shooting modes to help you capture the best moments.</p>
+    <p>Use Night Mode to take brighter, clearer photos in low-light conditions. For activation steps, usage tips, and limitations such as increased battery usage, see <xref href="night-mode.dita">Using Night Mode</xref>.</p>
   </body>
 </topic>

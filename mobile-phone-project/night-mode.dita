@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="night-mode">
+  <title>Using Night Mode</title>
+  <body>
+    <p>Your <keyword keyref="phone-name"/> mobile phone includes Night Mode to help you take brighter, clearer photos in low-light conditions.</p>
+    <ol>
+      <li>Open the Camera app on your mobile phone.</li>
+      <li>Swipe to select the Night Mode option.</li>
+      <li>Frame your subject and hold the phone steady.</li>
+      <li>Tap the shutter button to take a photo.</li>
+    </ol>
+    <p>When Night Mode is active, battery usage may increase during camera use. For more information about power usage, see <xref href="battery.dita">Battery and Charging</xref>.</p>
+  </body>
+</topic>
