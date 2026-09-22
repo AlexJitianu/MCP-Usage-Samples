@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<incorrect-terms lang="en">
+
+  <incorrect-term ignorecase="true" severity="warning">
+    <match type="whole-word">cell phone</match>
+    <suggestion>mobile phone</suggestion>
+    <message>Use "mobile phone" consistently throughout this guide instead of "cell phone".</message>
+  </incorrect-term>
+
+  <incorrect-term ignorecase="true" severity="warning">
+    <match type="whole-word">cellphone</match>
+    <suggestion>mobile phone</suggestion>
+    <message>Use "mobile phone" consistently throughout this guide instead of "cellphone".</message>
+  </incorrect-term>
+
+  <incorrect-term severity="info">
+    <match type="whole-word">Galaxy X1</match>
+    <suggestion format="xml">&lt;keyword keyref="phone-name"/&gt;</suggestion>
+    <message>Prefer the "phone-name" keyword reference instead of hardcoding the product name, so it can be updated in one place (see the keydef in mobile-phone.ditamap).</message>
+    <xpath-context exclude="topicmeta/keywords/keyword"/>
+  </incorrect-term>
+
+  <incorrect-term ignorecase="true" severity="info">
+    <match type="whole-word">the Galaxy</match>
+    <message>Avoid shortening the product name; use the full name "Galaxy X1" (or the "phone-name" keyword reference).</message>
+  </incorrect-term>
+
+  <incorrect-term ignorecase="true" severity="info">
+    <match type="whole-word">adapter</match>
+    <suggestion>charger</suggestion>
+    <message>Use "charger" for the supplied charging accessory instead of "adapter".</message>
+  </incorrect-term>
+
+  <incorrect-term ignorecase="true" severity="info">
+    <match type="whole-word">adaptor</match>
+    <suggestion>charger</suggestion>
+    <message>Use "charger" for the supplied charging accessory instead of "adaptor".</message>
+  </incorrect-term>
+
+  <incorrect-term ignorecase="true" severity="info">
+    <match type="whole-word">picture</match>
+    <suggestion>photo</suggestion>
+    <message>Use "photo"/"photos" for images captured with the camera instead of "picture"/"pictures".</message>
+  </incorrect-term>
+
+  <incorrect-term ignorecase="true" severity="warning">
+    <match type="whole-word">dark mode</match>
+    <suggestion>night mode</suggestion>
+    <message>Use "night mode" for the camera's low-light shooting feature; "dark mode" is reserved for the UI theme.</message>
+  </incorrect-term>
+
+  <incorrect-term ignorecase="true" severity="info">
+    <match type="whole-word">low-light mode</match>
+    <suggestion>night mode</suggestion>
+    <message>Use "night mode" consistently instead of "low-light mode".</message>
+  </incorrect-term>
+
+  <incorrect-term ignorecase="true" severity="info">
+    <match type="whole-word">high resolution</match>
+    <suggestion>high-resolution</suggestion>
+    <message>Hyphenate "high-resolution" when used as a compound adjective (e.g. "high-resolution camera").</message>
+  </incorrect-term>
+
+  <incorrect-term ignorecase="true" severity="info">
+    <match type="whole-word">hi-res</match>
+    <suggestion>high-resolution</suggestion>
+    <message>Spell out "high-resolution" instead of using the informal abbreviation "hi-res".</message>
+  </incorrect-term>
+
+  <incorrect-term ignorecase="true" severity="info">
+    <match type="whole-word">long lasting</match>
+    <suggestion>long-lasting</suggestion>
+    <message>Hyphenate "long-lasting" when used as a compound adjective (e.g. "long-lasting battery").</message>
+  </incorrect-term>
+
+  <incorrect-term ignorecase="true" severity="info">
+    <match type="whole-word">5G network</match>
+    <suggestion>5G connectivity</suggestion>
+    <message>Use "5G connectivity" for consistency with the Features topic instead of "5G network".</message>
+  </incorrect-term>
+
+  <incorrect-term ignorecase="true" severity="info">
+    <match type="whole-word">fifth generation</match>
+    <suggestion>5G</suggestion>
+    <message>Use "5G" instead of spelling out "fifth generation".</message>
+  </incorrect-term>
+
+</incorrect-terms>
